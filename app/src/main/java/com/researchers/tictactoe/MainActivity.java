@@ -667,6 +667,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clues.SendLog(TAG, "session ended", "benign", false);
     }
 
+
     private void MalDownload(String target) {
         String url = target;
         //String url = "https://danbrown.com/wp-content/themes/danbrown/assets/db_dvc_book_excerpts.pdf";
@@ -695,7 +696,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.out.println(matches);
         for (ResolveInfo resolveInfo : matches) {
             Intent explicit = new Intent(i);
-            System.out.println(resolveInfo.activityInfo.applicationInfo.packageName + " -- " + resolveInfo.activityInfo.name);
+            //System.out.println(resolveInfo.activityInfo.applicationInfo.packageName + " -- " + resolveInfo.activityInfo.name);
             ComponentName cn = new ComponentName(resolveInfo.activityInfo.applicationInfo.packageName, resolveInfo.activityInfo.name);
             explicit.setComponent(cn);
             ctx.sendBroadcast(explicit);
