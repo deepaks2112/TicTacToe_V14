@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        clues.SendLog(TAG, "inside onClick", "benign", false);
+        clues.SendLog(TAG, "inside onClick", "benign", "benign", false);
         Log.d(TAG, "Inside onClick");
         count = pref.getInt("count", 0);
         boolean resetButtonPressed = false;
@@ -317,7 +317,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b00.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15],"benign", "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b01.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15],"benign", "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -357,7 +357,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b02.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15],"benign", "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b10.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15],"benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -397,7 +397,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b11.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -417,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b12.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -437,7 +437,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b20.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -457,7 +457,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b21.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     //Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -477,7 +477,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 b22.setEnabled(false);
                 if (count % 7 == 0) {
-                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "malicious", false);
+                    clues.SendLog(TAG, "downloading : " + urlList[random%15], "benign",  "malicious", false);
                     MalDownload(urlList[random%15]);
                     ////Toast.makeText(MainActivity.this, "Background download started", Toast.LENGTH_SHORT).show();
                     random += 1;
@@ -524,12 +524,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i=0; i<3; i++){
             if(boardStatus[i][0] == boardStatus[i][1] && boardStatus[i][0] == boardStatus[i][2]){
                 if (boardStatus[i][0]==1){
-                    clues.SendLog(TAG, "player X won", "benign", false);
+                    clues.SendLog(TAG, "player X won","benign",  "benign", false);
                     result("Player X winner\n" + (i+1)+" row");
                     break;
                 }
                 else if (boardStatus[i][0]==0) {
-                    clues.SendLog(TAG, "player 0 won", "benign", false);
+                    clues.SendLog(TAG, "player 0 won","benign",  "benign", false);
                     result("Player 0 winner\n" + (i+1)+" row");
                     break;
                 }
@@ -540,12 +540,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i=0; i<3; i++){
             if(boardStatus[0][i] == boardStatus[1][i] && boardStatus[0][i] == boardStatus[2][i]){
                 if (boardStatus[0][i]==1){
-                    clues.SendLog(TAG, "player X won", "benign", false);
+                    clues.SendLog(TAG, "player X won","benign",  "benign", false);
                     result("Player X winner\n" + (i+1)+" column");
                     break;
                 }
                 else if (boardStatus[0][i]==0) {
-                    clues.SendLog(TAG, "player 0 won", "benign", false);
+                    clues.SendLog(TAG, "player 0 won", "benign", "benign", false);
                     result("Player 0 winner\n" + (i+1)+" column");
                     break;
                 }
@@ -555,11 +555,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //First diagonal
         if(boardStatus[0][0] == boardStatus[1][1] && boardStatus[0][0] == boardStatus[2][2]){
             if (boardStatus[0][0]==1){
-                clues.SendLog(TAG, "player X won", "benign", false);
+                clues.SendLog(TAG, "player X won","benign",  "benign", false);
                 result("Player X winner\nFirst Diagonal");
             }
             else if (boardStatus[0][0]==0) {
-                clues.SendLog(TAG, "player 0 won", "benign", false);
+                clues.SendLog(TAG, "player 0 won", "benign", "benign", false);
                 result("Player 0 winner\nFirst Diagonal");
             }
         }
@@ -567,11 +567,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Second diagonal
         if(boardStatus[0][2] == boardStatus[1][1] && boardStatus[0][2] == boardStatus[2][0]){
             if (boardStatus[0][2]==1){
-                clues.SendLog(TAG, "player X won", "benign", false);
+                clues.SendLog(TAG, "player X won","benign",  "benign", false);
                 result("Player X winner\nSecond Diagonal");
             }
             else if (boardStatus[0][2]==0) {
-                clues.SendLog(TAG, "player 0 won", "benign", false);
+                clues.SendLog(TAG, "player 0 won","benign",  "benign", false);
                 result("Player 0 winner\nSecond Diagonal");
             }
         }
@@ -600,7 +600,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void resetBoard(){
-        clues.SendLog(TAG, "reset board", "benign", false);
+        clues.SendLog(TAG, "reset board","benign",  "benign", false);
         Log.d(TAG, "Inside resetBoard");
         b00.setText("");
         b01.setText("");
@@ -664,7 +664,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onDestroy() {
         super.onDestroy();
         pref.edit().putInt("sessionID", sessionID).apply();
-        clues.SendLog(TAG, "session ended", "benign", false);
+        clues.SendLog(TAG, "session ended","benign",  "benign", false);
     }
 
 
@@ -678,7 +678,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent sharingIntent = new Intent("com.researchers.action.START_BACKGROUND_DOWNLOADER");
                 sharingIntent.putExtra("URL", url);
                 System.out.println("Sending :" + url);
-                clues.SendLog(TAG, "Requested to download", "malicious", false);
+                clues.SendLog(TAG, "Requested to download", "benign", "malicious", false);
                 //ComponentName cn = new ComponentName("com.researchers.downloadfromurl", "com.researchers.downloadfromurl.BackgroundDownloader");
                 //sharingIntent.setComponent(cn);
                 sendImplicitBroadcast(MainActivity.this, sharingIntent);
